@@ -1,5 +1,59 @@
 <div class="col-sm-11 col-xs-12 blog-content">
   <h2 class="text-center"><%= @post.title %></h2>
-  <h5 class="text-center"><%= @post.created_at.strftime('%b %d, %Y') %></h5>
-  <div><%= raw @post.body %></div>
+  <h2 class="text-center"> Posted by: <%= @post.admin.username %></h2>
+  <h3 class="text-center"> on <%= @post.created_at.strftime('%b %d, %Y') %></h3>
+  <div class="well" style="background-color:white;"><h4><%= raw @post.body %></h4></div>
+  <div class="tags">
+    <h5><strong>Tags:</strong> <%= raw tag_links(@post.all_tags) %> </h5>
+  </div>
+  <div class="col-md-6">
+    <h4 style="text-align:center"><strong>Comments:</strong></h4>
+    <% if @post.reviews.empty? %>
+      <p class="text-center">There are no comments for this post yet</p>
+    <% else %>
+      <table class="table">
+        <% @post.reviews.each do |review| %>
+          <tr>
+            <td><h5>Name:</h5><%= review.name %></td>
+            <td><h5>Comment:</h5><%= review.body %></td>
+            <% if admin_signed_in? %>
+            <td>
+              <%= link_to edit_post_review_path(@post, review) do %>
+                <%= fa_icon :pencil %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to post_review_path(@post, review) , method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <%= fa_icon :trash %>
+              <% end %>
+            </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+
+    <h5 class="text-center"><strong>Add Comment:</strong></h5>
+    <%= form_for [@post, Review.create] do |f| %>
+      <div class="form-group">
+        <h5>*Name:<h5>
+        <%= f.text_area :name, :id => "message_area", placeholder: "Name", class: 'form-control'%>
+        <h5>*Email: <i>(We will never publish your email address)</i><h5>
+        <%= f.text_area :email, :id => "message_area", placeholder: "Email", class: 'form-control'%>
+        <h5>Website: <i>(We will never publish your website)</i><h5>
+        <%= f.text_area :website, :id => "message_area", placeholder: "Website", class: 'form-control'%>
+        <h5>*Comment:<h5>
+        <%= f.text_area :body, placeholder: "Your comment", class: 'form-control', rows: 4 %>
+      </div>
+      <%= f.submit 'Submit Comment', class: 'btn btn-sm btn-primary' %>
+    <% end %>
+  </div>
+
+<br>
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <h4 class="text-center"><strong>Share on social media:</strong></h4>
+      <%= social_share_button_tag(@post.title, :allow_sites => %w(twitter facebook google_plus)) %>
+    </div>
+  </div>
 </div>

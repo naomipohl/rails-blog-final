@@ -12,6 +12,8 @@
 //
 //= require rails-ujs
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require ckeditor/init
+//= require social-share-button
 //= require_tree .
+
+$(function(){ $(document).foundation(); });
