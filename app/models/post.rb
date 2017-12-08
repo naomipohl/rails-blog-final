@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   belongs_to :admin
 
   def self.search(search)
-    where("title LIKE OR body LIKE", "%#{search}%", "%#{search}%") 
+    where("title ILIKE ? OR body ILIKE ?", "%#{search}%", "%#{search}%") 
   end
 
   def self.tagged_with(name)
