@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   validates_uniqueness_of :title
   validates :body, presence: true
   has_many :reviews, dependent: :destroy
-  has_many :taggings
+  has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings, dependent: :destroy
   belongs_to :admin
 

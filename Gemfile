@@ -22,6 +22,7 @@ gem 'font-awesome-rails', '4.7.0.2'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'social-share-button', '~> 0.1.6'
+gem 'non-stupid-digest-assets', '~> 1.0.4'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
