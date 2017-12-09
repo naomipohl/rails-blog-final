@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require ckeditor-jquery
 //= require bootstrap-sprockets
 //= require social-share-button
 //= require_tree .
