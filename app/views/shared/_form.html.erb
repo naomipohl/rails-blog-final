@@ -1,0 +1,13 @@
+<%= f.label :image %>
+<%= f.file_field :image %><br>
+<%= f.hidden_field :image_cache %>
+
+<% if post.image? %>
+    <%= image_tag post.image.thumb.url %>
+    <div>
+      <%= label_tag :remove_image do %>
+        Remove image
+        <%= f.check_box :remove_image %>
+      <% end %>
+    </div>
+<% end %>

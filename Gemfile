@@ -16,13 +16,12 @@ gem 'foundation-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'simple_form', '~> 3.2'
 gem 'bootstrap-sass', '~> 3.3'
-gem 'ckeditor', '~> 4.1'
 gem 'devise'
 gem 'font-awesome-rails', '4.7.0.2'
-gem 'carrierwave'
 gem 'mini_magick'
 gem 'social-share-button', '~> 0.1.6'
-gem 'non-stupid-digest-assets', '~> 1.0.4'
+gem 'file_validators'
+gem 'carrierwave', '~> 1.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
