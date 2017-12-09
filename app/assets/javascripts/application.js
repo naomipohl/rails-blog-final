@@ -13,7 +13,6 @@
 //= require rails-ujs
 //= require ckeditor-jquery
 //= require bootstrap-sprockets
-//= require ckeditor/init
 //= require social-share-button
 //= require_tree .
 
