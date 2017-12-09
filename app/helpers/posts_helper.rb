@@ -3,12 +3,9 @@ module PostsHelper
     tags.split(",").map{|tag| link_to tag.strip, tag_path(tag.strip) }.join(", ") 
   end
 
-  #def tag_cloud(tags, classes)
-    #max = tags.order(&:count).last
-    #max = tags.sort_by(&:count).last
-    #tags.each do |tag|
-      #index = tag.count.to_f / max.count * (classes.size-1)
-      #yield(tag, classes[index.round])
-    #end
-  #end
+  def tag_list(tags)
+    tags.each do |tag|
+      yield(tag)
+    end
+  end
 end

@@ -1,9 +1,13 @@
 <h1 class="text-center"><strong>Welcome to my blog!</strong></h1>
 
-<h2 class="text-center">Here's what I blog about:</h2>
+<h4>This blog is about: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisi cras fermentum odio eu feugiat pretium nibh ipsum. Mattis aliquam faucibus purus in massa tempor nec. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Viverra accumsan in nisl nisi scelerisque eu ultrices vitae. Duis ultricies lacus sed turpis. Feugiat scelerisque varius morbi enim. Integer eget aliquet nibh praesent tristique magna sit amet. Ullamcorper a lacus vestibulum sed arcu non. Auctor eu augue ut lectus arcu bibendum at varius. Nunc id cursus metus aliquam. In ante metus dictum at tempor commodo ullamcorper a lacus.
 
-<%#<div class="tags-cloud">
-  <% tag_cloud Tag.counts, %w{css1 css2 css3 css4} do |tag, css_class| %>
-    <%#<%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <%#<% end %>
-<%#</div>
+Magna ac placerat vestibulum lectus mauris ultrices. Faucibus purus in massa tempor nec feugiat nisl pretium fusce. Quisque id diam vel quam elementum pulvinar etiam non. Tempor nec feugiat nisl pretium fusce id velit ut tortor. Velit aliquet sagittis id consectetur purus ut faucibus pulvinar. Pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies. Viverra vitae congue eu consequat ac felis donec. Odio ut sem nulla pharetra diam sit. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper. Habitant morbi tristique senectus et netus et malesuada fames ac. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim. Risus in hendrerit gravida rutrum quisque non tellus. Quisque sagittis purus sit amet. Aliquam purus sit amet luctus venenatis lectus. In hac habitasse platea dictumst quisque sagittis purus sit. Vitae ultricies leo integer malesuada nunc vel risus. Semper quis lectus nulla at volutpat diam ut. Euismod quis viverra nibh cras pulvinar mattis nunc sed blandit. Eros in cursus turpis massa tincidunt dui ut ornare lectus. A arcu cursus vitae congue mauris rhoncus aenean vel.</h4>
+
+<h2 class="text-center">What I blog about:</h2>
+
+<div class="tags-list">
+  <% tag_list Tag.all do |tag| %>
+    <h3><%= link_to tag.name, tag_path(tag.name)%></h3>
+  <% end %>
+</div>
