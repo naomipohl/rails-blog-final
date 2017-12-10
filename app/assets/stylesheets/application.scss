@@ -19,20 +19,19 @@ textarea#message_area {
   resize: none;
 }
 
-.tags-list{
+#tag_cloud {
+  width: 400px;
+  line-height: 1.6em;
+  .s { font-size: 1.0em; }
+  .m { font-size: 1.5em; }
+  .l { font-size: 2.0em; }
+  .xl { font-size: 2.5em; }
   padding: 14px;
   background: white;
   border-radius: 6px;
   display:inline-block;
-  margin-left: 45%;
-}
-
-#tag_cloud {
-  width: 400px;
-  line-height: 1.6em;
-  .s { font-size: 0.8em; }
-  .m { font-size: 1.2em; }
-  .l { font-size: 1.8em; }
+  margin-left: 35%;
+  word-spacing: 2em;
 }
 
 .social-share-button-facebook {
@@ -40,11 +39,3 @@ textarea#message_area {
   width: 16px;
   height: 16px;
 }
-
-.css1 { font-size: 1.0em;}
-
-.css2 { font-size: 1.5em;}
-
-.css3 { font-size: 2.0em;}
-
-.css4 { font-size: 2.5em;}
