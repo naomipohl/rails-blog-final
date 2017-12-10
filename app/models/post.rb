@@ -4,7 +4,6 @@ class Post < ApplicationRecord
   validates :body, presence: true
   validates :title, presence: true, length: { minimum: 2 }
   validates :body, presence: true
-  validates :image, file_size: { less_than: 1.megabytes }
   has_many :reviews, dependent: :destroy
   has_many :taggings, dependent: :delete_all
   has_many :tags, through: :taggings, dependent: :delete_all
