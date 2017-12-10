@@ -6,13 +6,16 @@ class Post < ApplicationRecord
   validates :body, presence: true
   validates :image, file_size: { less_than: 1.megabytes }
   has_many :reviews, dependent: :destroy
-  has_many :taggings
+  has_many :taggings, dependent: :delete_all
   has_many :tags, through: :taggings, dependent: :delete_all
   belongs_to :admin
-  mount_uploader :image, ImageUploader
 
   def self.search(search)
-    where("title LIKE ? OR body LIKE ?", "%#{search}%", "%#{search}%") 
+    where("title ILIKE ? OR body ILIKE ?", "%#{search}%", "%#{search}%") 
+  end
+
+  def self.tag_counts
+    Tag.select('tags.*, count(taggings.tag_id) as count').joins(:taggings).group('taggings.tag_id')
   end
 
   def self.tagged_with(name)

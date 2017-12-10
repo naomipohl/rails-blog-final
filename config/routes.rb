@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  get 'tags/:tag', to: 'posts#index', as: "tag"
+  get 'tags/:tag', to: 'posts#index', as: "tag", :constraints  => { :tag => /[^\/]+/ }
 
   resources :posts do
   	resources :reviews

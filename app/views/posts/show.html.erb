@@ -5,7 +5,6 @@
 
   <div class="well" style="background-color:white;">
     <h4><%= raw @post.body %></h4>
-    <%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
   </div>
   <div class="tags">
     <h5><strong>Tags:</strong> <%= raw tag_links(@post.all_tags) %> </h5>

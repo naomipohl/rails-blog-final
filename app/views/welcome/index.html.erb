@@ -6,8 +6,14 @@ Magna ac placerat vestibulum lectus mauris ultrices. Faucibus purus in massa tem
 
 <h2 class="text-center">What I blog about:</h2>
 
-<div class="tags-list">
-  <% tag_list Tag.all do |tag| %>
-    <h3><%= link_to tag.name, tag_path(tag.name)%></h3>
+<div id="tag_cloud">
+  <% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
   <% end %>
 </div>
+
+<!-- <div class="tags-list"> -->
+  <%# <% tag_list Post.tag_counts do |tag| %>
+   <!-- <%# <h3><%= link_to tag.name, tag_path(tag.name)%></h3> -->
+  <%# <% end %>
+<%# </div> 
