@@ -19,6 +19,7 @@ gem 'bootstrap-sass', '~> 3.3'
 gem 'devise'
 gem 'font-awesome-rails', '4.7.0.2'
 gem 'social-share-button', '~> 0.1.6'
+gem 'sendgrid-ruby'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
