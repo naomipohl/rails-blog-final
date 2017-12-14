@@ -12,6 +12,7 @@ class Post < ApplicationRecord
     medium: '300x300>'
   }
   validates_attachment_content_type :image, content_type: { content_type: [ "image/jpg", "image/jpeg", "image/png" ] }
+  attr_accessor :image_file_name
 
   def self.search(search)
     where("title ILIKE ? OR body ILIKE ?", "%#{search}%", "%#{search}%") 
