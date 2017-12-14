@@ -2,9 +2,8 @@
   <h2 class="text-center"><%= @post.title %></h2>
   <h2 class="text-center"> Posted by: <%= @post.admin.username %></h2>
   <h3 class="text-center"> on <%= @post.created_at.strftime('%b %d, %Y') %></h3>
-
   <div class="well" style="background-color:white;">
-    <h4><%= raw @post.body %></h4>
+    <h4><%= raw @post.body %> <%= image_tag @post.image.url(:square) %></h4>
   </div>
   <div class="tags">
     <h5><strong>Tags:</strong> <%= raw tag_links(@post.all_tags) %> </h5>
