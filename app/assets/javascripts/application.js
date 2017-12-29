@@ -11,9 +11,9 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require ckeditor/init
 //= require bootstrap-sprockets
 //= require social-share-button
-//= require ckeditor/init
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
