@@ -19,9 +19,8 @@
   </div>
 
   <div class="form-group">
-  <%= tinymce_assets %>
-    <%= f.input :body, class: "tinymce" %>
-  <%= tinymce %>
+    <%= @post.body.html_safe %>
+    <%= f.input :body, :class => "tinymce" %>
   </div>
 
   <div class="field">
@@ -38,3 +37,4 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+<%= tinymce %>

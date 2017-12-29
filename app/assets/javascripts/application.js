@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require tinymce
+//= require tinymce-jquery
 //= require bootstrap-sprockets
 //= require social-share-button
 //= require_tree .
