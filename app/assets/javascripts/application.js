@@ -13,7 +13,6 @@
 //= require rails-ujs
 //= require bootstrap-sprockets
 //= require social-share-button
-//= require ckeditor/init
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
