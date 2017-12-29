@@ -16,4 +16,6 @@
 //= require ckeditor/init
 //= require_tree .
 
+config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+
 $(function(){ $(document).foundation(); });
